@@ -1,12 +1,33 @@
-# React + Vite
+# AI-Powered LinkedIn Post Generator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🚀 A powerful web application that generates engaging LinkedIn posts using Google Gemini AI. Users can customize the post tone, post type, and audience focus to tailor content to their target audience.
 
-Currently, two official plugins are available:
+## Features:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- ✅Generate LinkedIn posts in various tones (e.g., Professional, Motivational, etc.)
+- ✅ Customize content by selecting post types (e.g., Storytelling, Informational, etc.)
+- ✅ Audience-specific content targeting for improved engagement
+- ✅ Markdown support for enhanced content formatting
+- ✅ Real-time word counter and loading spinner for improved UX
+- ✅ Built-in Toast notifications for feedback
+- ✅ Clean, responsive UI with tooltips for better guidance
 
-## Expanding the ESLint configuration
+## Tech Stack:
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Frontend: React, HTML5, CSS3
+- Backend: Node.js, Express
+- AI Integration: Google Gemini API
+
+## How to Use:
+
+- Clone the repository.
+- Install dependencies with npm install.
+- Add your Google Gemini API Key to the .env file.
+- Run the application using npm start.
+- Explore the options to generate engaging LinkedIn posts!
+
+## Future Enhancements:
+
+- Improved prompt engineering for better content quality
+- Enhanced UI/UX with animations and improved design
+- Additional AI models for diverse content generation
