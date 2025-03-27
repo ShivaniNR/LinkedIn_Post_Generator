@@ -1,5 +1,5 @@
 .post-generator-container {
-    max-width: 500px;
+    max-width: 550px;
     margin: 2rem auto;
     padding: 2rem;
     background-color: #f9f9f9;
@@ -192,6 +192,33 @@ button:hover:not(:disabled) {
     color: #d9534f;
     margin-top: 10px;
     font-weight: bold;
+}
+
+/* copy function notification  */
+.notification-box {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #2563eb;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.notification-box.success {
+    background-color: #2563eb;
+    visibility: visible;
+    opacity: 1;
+}
+
+.notification-box.error {
+    background-color: #d9534f;
+    visibility: visible;
+    opacity: 1;
 }
 
 .post-preview-container {

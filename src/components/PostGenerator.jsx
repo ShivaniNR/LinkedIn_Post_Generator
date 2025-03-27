@@ -46,17 +46,34 @@ const PostGenerator = () => {
             setLoading(false);
         }
 
-        // Mock API logic with delay
-        // setTimeout(() => {
-        //     const mockPost = `Here's a ${tone.toLowerCase()} post idea based on: "${postIdea}"`;
-        //     setGeneratedPost(mockPost);
-            
-        // }, 2000); // Mock delay for demonstration
     }
 
-    const handleCopyToClipboard = () => {
-        navigator.clipboard.writeText(generatedPost);
-        alert('Post copied to clipboard!');
+    const showNotification = (message, type) => {
+        const notification = document.getElementById('notification');
+        notification.innerText = message;
+        notification.className = `notification-box ${type}`;
+        
+        setTimeout(() => {
+            notification.className = 'notification-box'; // Hides after 3 seconds
+            notification.innerText = '';
+        }, 3000);
+    };
+
+    const handleCopyToClipboard = async () => {
+        let contentToCopy = generatedPost;
+        if (!isMarkdown){
+            const contentElement = document.getElementById('generated-post');
+            contentToCopy = contentElement?.innerText;
+        }
+
+        try {
+                // Attempt to write to clipboard
+                await navigator.clipboard.writeText(contentToCopy);
+                showNotification('Post copied successfully!', 'success');
+            } catch (err) {
+                // Catch error if clipboard operation fails
+                showNotification('Failed to copy. Please try again.', 'error');
+            }
     };
 
     return (
@@ -113,7 +130,7 @@ const PostGenerator = () => {
                 {/* Post Type */}
                 <div className="options_item">
                     <label htmlFor="postType">Post Type:
-                        <span className="tooltip" data-tooltip="Choose the type of the post content">❔</span>
+                        <span className="tooltip" data-tooltip="Choose the content type of the post">❔</span>
                     </label>
                     <select 
                         id = "postType"
@@ -158,9 +175,10 @@ const PostGenerator = () => {
             {generatedPost && (
                 <div className="post-preview-container">
                     <h3>Generated Post:</h3>
-                    <div className="post-preview">
+                    <div id="generated-post" className="post-preview">
                         <ReactMarkdown>{generatedPost}</ReactMarkdown>
                     </div>
+                    <div id="notification" className="notification-box"></div>
                     <button onClick={handleCopyToClipboard}>Copy to Clipboard</button>
                 </div>
             )}

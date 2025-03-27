@@ -9,10 +9,10 @@ export const generatePost = async (postIdea, tone, audienceFocus, postType, isMa
         //const prompt = `Generate a single LinkedIn post in a ${tone} tone based on the idea: "${postIdea}"`;
         let prompt = ``;
         if (postType.toLowerCase() == 'storytelling') {
-            prompt = `Write a compelling and engaging ${postType.toLowerCase()} post designed for a ${audienceFocus.toLowerCase()} audience. The post should adopt a ${tone.toLowerCase()} tone and focus on the topic: "${postIdea}". Write to include some professional work experiences. Ensure the content is concise, thought-provoking, and encourages meaningful engagement suitable for LinkedIn networking. Format the output as ${format}.`
+            prompt = `Write a compelling and engaging ${postType.toLowerCase()} post designed for a ${audienceFocus.toLowerCase()} audience. The post should adopt a ${tone.toLowerCase()} tone and focus on the topic: "${postIdea}". Write to include some professional work experiences. Ensure the content is concise and encourages meaningful engagement suitable for LinkedIn networking. Format the output in ${format} format.`
         }
         else{
-            prompt = `Write a compelling and engaging ${postType.toLowerCase()} post designed for a ${audienceFocus.toLowerCase()} audience. The post should adopt a ${tone.toLowerCase()} tone and focus on the topic: "${postIdea}". Ensure the content is concise, thought-provoking, and encourages meaningful engagement suitable for LinkedIn networking. Format the output as ${format}.`
+            prompt = `Write a compelling and engaging ${postType.toLowerCase()} post designed for a ${audienceFocus.toLowerCase()} audience. The post should adopt a ${tone.toLowerCase()} tone and focus on the topic: "${postIdea}". Ensure the content is concise and encourages meaningful engagement suitable for LinkedIn networking. Format the output in ${format} format.`
         }
 
         
